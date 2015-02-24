@@ -1,4 +1,4 @@
-modules.exports = function (resource, api, url) {
+module.exports = function (resource, api, url) {
 	return resource( api.url, {
 		key : api.key,
 		url : url,
@@ -29,7 +29,7 @@ modules.exports = function (resource, api, url) {
 	});
 };
 
-modules.exports.$inject = [
+module.exports.$inject = [
 	'$resource',
 	'API',
 	'URL'

@@ -3,8 +3,8 @@
 	"url" : "http://api.tumblr.com/v2/blog/:url/:type/:is?api_key=:key",
 	"tpl" : {
 		"post" : "simple",
-		"pages" : "pages",
 		"error" : "error",
 		"home" : "home"
-	}
+	},
+	"lang" : "es"
 }

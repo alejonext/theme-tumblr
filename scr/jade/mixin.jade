@@ -1,0 +1,8 @@
+mixin template( types, name )
+	script( type={
+		'angular'	: 'text/ng-template',
+		'knockout' : 'text/html',
+		'ember'	: 'text/x-handlebars' }[ types ],
+		id!=attributes.id || name,
+		data-template-name!=attributes.id || name )
+		block

@@ -1,0 +1,28 @@
+article( ng-switch="post.type" )
+	section( ng-switch-when="photo" )
+		ul
+			li( ng-repeat="photo in post.photos.alt_sizes", class="item-{{$index}}" ): a( ng-href="{{photo.url}}" )
+				img(ng-src="{{photo.url}}", width="{{photo.width}}", height="{{photo.height}}" )
+			p( ng-if="post.caption.length", ng-bind-html="post.caption")
+	section( ng-switch-when="chat" )
+	section( ng-switch-when="video" )
+	section( ng-switch-when="quote" )
+	section( ng-switch-when="answer" )
+	section( ng-switch-when="audio" )
+	section( ng-switch-when="link" )
+	section( ng-switch-default )
+		//- Texto comun
+		h1 {{post.title}}
+		article( ng-bind-html="post.body" )
+
+	p( am-time-ago="post.timestamp" )
+	ul( ng-if="post.tags.length" )
+		li( ng-repeat="tag in post.tags" )
+			a(href="http://", target="_blank") {{tag}}
+	ul
+		li: a(ng-href="http://api.twitter.com/intent/tweet?url={{post.url}}&tweet=" )
+			i.fa.fa-twitter 
+		li: a(ng-href="http://facebook.com/share?url={{post.url}}" )
+			i.fa.fa-facebook
+		li: a(ng-href="https://www.tumblr.com/reblog/{{post.id}}/{{post.reblog_key}}" )
+			i.fa.fa-reblog

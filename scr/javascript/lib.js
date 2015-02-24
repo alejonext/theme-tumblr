@@ -1,8 +1,10 @@
 require('angular');
-window.moment = require('momentjs');
-require('angular-routes');
+window.moment = require('moment');
+require('moment/min/locales.js');
+require('angular-route');
 require('angular-animate');
 require('angular-sanitize');
 require('angular-resource');
 require('angular-touch');
+require('angular-moment');
 require('./services/app.js');

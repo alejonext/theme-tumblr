@@ -1,6 +1,6 @@
-modules.exports = function (route, api) {
+module.exports = function (route, api) {
 	route
-		.when('/:id',{
+		.when('/',{
 			contrller : 'home',
 			template : api.tpl.home
 		})
@@ -8,17 +8,13 @@ modules.exports = function (route, api) {
 			contrller : 'post',
 			template : api.tpl.post
 		})
-		.when('/:id',{
-			contrller : 'pages',
-			template : api.tpl.pages
-		})
 		.otherwise({
 			template : api.tpl.error	
 		});
 };
 
 
-modules.exports.$inject = [
+module.exports.$inject = [
 	'$routeProvider',
 	'API'
 ];
