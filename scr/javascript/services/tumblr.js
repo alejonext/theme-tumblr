@@ -1,6 +1,6 @@
-modules.exports = function (resource, apikey, url) {
-	return resource('http://api.tumblr.com/v2/blog/:url/:type/:is?api_key=:key', {
-		key : apikey,
+modules.exports = function (resource, api, url) {
+	return resource( api.url, {
+		key : api.key,
 		url : url,
 		type : 'info',
 		is : ''
@@ -23,9 +23,14 @@ modules.exports = function (resource, apikey, url) {
 		posts : { // Todos los posts, sin distincion
 			method : 'GET',
 			params : {
-				type : 'posts'
+				type : 'posts',
 			}
 		}
-
 	});
 };
+
+modules.exports.$inject = [
+	'$resource',
+	'API',
+	'URL'
+];

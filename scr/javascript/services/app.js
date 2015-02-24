@@ -4,5 +4,10 @@ angular.module('theme', [
 	'ngAnimate',
 	'ngTouch',
 	'ngSanitize',
-	'ngAnimate'
-]);
+	'ngAnimate',
+	'confg'
+])
+.constant('API', require('./api.json'))
+.service('tumblr', require('./tumblr.js'))
+.controller();//?
+.config(require('./config.js'))
