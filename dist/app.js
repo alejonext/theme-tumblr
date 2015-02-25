@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/home/pol/Work/node_modules/angular-animate/angular-animate.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /**
  * @license AngularJS v1.3.13
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -2137,7 +2137,7 @@ angular.module('ngAnimate', ['ng'])
 
 })(window, window.angular);
 
-},{}],"/home/pol/Work/node_modules/angular-deckgrid/angular-deckgrid.js":[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 (function (angular) {
 /*! angular-deckgrid (v0.5.0) - Copyright: 2013 - 2014, André König (andre.koenig@posteo.de) - MIT */
 /*
@@ -2556,7 +2556,7 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
 ]);
 
 })(angular);
-},{}],"/home/pol/Work/node_modules/angular-moment/angular-moment.js":[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /* angular-moment.js / v0.9.0 / (c) 2013, 2014, 2015 Uri Shaked / MIT Licence */
 
 'format global';
@@ -3032,7 +3032,7 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
 })();
 
 
-},{"moment":"/home/pol/Work/node_modules/moment/moment.js"}],"/home/pol/Work/node_modules/angular-resource/angular-resource.js":[function(require,module,exports){
+},{"moment":10}],4:[function(require,module,exports){
 /**
  * @license AngularJS v1.3.13
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -3701,7 +3701,7 @@ angular.module('ngResource', ['ng']).
 
 })(window, window.angular);
 
-},{}],"/home/pol/Work/node_modules/angular-route/angular-route.js":[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /**
  * @license AngularJS v1.3.13
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -4692,7 +4692,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],"/home/pol/Work/node_modules/angular-sanitize/angular-sanitize.js":[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /**
  * @license AngularJS v1.3.13
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -5375,7 +5375,7 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
 
 })(window, window.angular);
 
-},{}],"/home/pol/Work/node_modules/angular-touch/angular-touch.js":[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.3.13
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -5999,7 +5999,7 @@ makeSwipeDirective('ngSwipeRight', 1, 'swiperight');
 
 })(window, window.angular);
 
-},{}],"/home/pol/Work/node_modules/angular/angular.js":[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /**
  * @license AngularJS v1.3.13
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -32130,7 +32130,7 @@ var minlengthDirective = function() {
 })(window, document);
 
 !window.angular.$$csp() && window.angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}</style>');
-},{}],"/home/pol/Work/node_modules/moment/min/locales.js":[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 // moment.js locale configuration
 // locale : afrikaans (af)
@@ -39440,7 +39440,7 @@ var minlengthDirective = function() {
 }));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../moment":"/home/pol/Work/node_modules/moment/moment.js"}],"/home/pol/Work/node_modules/moment/moment.js":[function(require,module,exports){
+},{"../moment":10}],10:[function(require,module,exports){
 (function (global){
 //! moment.js
 //! version : 2.9.0
@@ -42487,40 +42487,50 @@ var minlengthDirective = function() {
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/pol/Work/theme-tumblr/src/javascript/controllers/home.js":[function(require,module,exports){
-module.exports = function (scope, tumblr, location) {
+},{}],11:[function(require,module,exports){
+module.exports = function (scope, tumblr) {
 	scope.pages =  {
-		page : 1
+		page : 0
 	};
-	scope.resp = tumblr.posts(scope.pages);
+	
 	scope.reload = function () {
 		scope.pages++;
-		var tmlbr =  tumblr.posts(scope.pages);
-		for (var i = tmblr.response.posts.length - 1; i >= 0; i--)
-			scope.resp.post.push(tmblr.response.posts[i]);	
+		tumblr.posts(scope.pages).$promise.then(function (post) {
+			console.log(post);
+			scope.post = post;
+		},  function( error ) {
+			console.log(error);
+		});
 	};
+
+	scope.reload();
 };
 
 
 module.exports.$inject = [
 	'$scope',
-	'myTumblr',
-	'$location'
+	'myTumblr'
 ];
-},{}],"/home/pol/Work/theme-tumblr/src/javascript/controllers/post.js":[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = function (scope, params, tumblr, location) {
-	console.log(scope);
-	var tmlbr = tumblr.posts(params.id);
-	if(tmlbr.meta.status >= 202)
-		return location.path('/error');
-
-	scope.card = scope.tmlbr.response.post[0];
 
 	scope.next = function () {
 	};
 
 	scope.prev = function () {
 	};
+
+	scope.start = function () {
+		tumblr.posts(params).$promise.then(function (post) {
+			console.log(post);
+			scope.card = post;
+		},  function( error ) {
+			console.log(error);
+			location.path('/error');
+		});
+	};
+
+	scope.start();
 };
 
 
@@ -42530,7 +42540,7 @@ module.exports.$inject = [
 	'myTumblr',
 	'$location'
 ];
-},{}],"/home/pol/Work/theme-tumblr/src/javascript/lib.js":[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 require('angular');
 window.moment = require('moment');
 require('moment/min/locales.js');
@@ -42542,15 +42552,15 @@ require('angular-touch');
 require('angular-moment');
 require('angular-deckgrid');
 require('./services/app.js');
-},{"./services/app.js":"/home/pol/Work/theme-tumblr/src/javascript/services/app.js","angular":"/home/pol/Work/node_modules/angular/angular.js","angular-animate":"/home/pol/Work/node_modules/angular-animate/angular-animate.js","angular-deckgrid":"/home/pol/Work/node_modules/angular-deckgrid/angular-deckgrid.js","angular-moment":"/home/pol/Work/node_modules/angular-moment/angular-moment.js","angular-resource":"/home/pol/Work/node_modules/angular-resource/angular-resource.js","angular-route":"/home/pol/Work/node_modules/angular-route/angular-route.js","angular-sanitize":"/home/pol/Work/node_modules/angular-sanitize/angular-sanitize.js","angular-touch":"/home/pol/Work/node_modules/angular-touch/angular-touch.js","moment":"/home/pol/Work/node_modules/moment/moment.js","moment/min/locales.js":"/home/pol/Work/node_modules/moment/min/locales.js"}],"/home/pol/Work/theme-tumblr/src/javascript/services/api.json":[function(require,module,exports){
-module.exports=module.exports={
+},{"./services/app.js":15,"angular":8,"angular-animate":1,"angular-deckgrid":2,"angular-moment":3,"angular-resource":4,"angular-route":5,"angular-sanitize":6,"angular-touch":7,"moment":10,"moment/min/locales.js":9}],14:[function(require,module,exports){
+module.exports={
 	"name" : "theme",
 	"key" : "fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4",
 	"url" : "http://api.tumblr.com/v2/blog/:name.tumblr.com/:type/:is?api_key=:key",
 	"lang" : "es",
 	"blog" : "alejonext"
 }
-},{}],"/home/pol/Work/theme-tumblr/src/javascript/services/app.js":[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 angular.module(require('./api.json').name, [
 	'ng',
 	'ngRoute',
@@ -42567,7 +42577,7 @@ angular.module(require('./api.json').name, [
 .controller('crtPost', require('../controllers/post.js'))
 .config(require('./config.js'))
 .run(require('./run.js'));
-},{"../controllers/home.js":"/home/pol/Work/theme-tumblr/src/javascript/controllers/home.js","../controllers/post.js":"/home/pol/Work/theme-tumblr/src/javascript/controllers/post.js","./api.json":"/home/pol/Work/theme-tumblr/src/javascript/services/api.json","./config.js":"/home/pol/Work/theme-tumblr/src/javascript/services/config.js","./run.js":"/home/pol/Work/theme-tumblr/src/javascript/services/run.js","./tumblr.js":"/home/pol/Work/theme-tumblr/src/javascript/services/tumblr.js"}],"/home/pol/Work/theme-tumblr/src/javascript/services/config.js":[function(require,module,exports){
+},{"../controllers/home.js":11,"../controllers/post.js":12,"./api.json":14,"./config.js":16,"./run.js":17,"./tumblr.js":18}],16:[function(require,module,exports){
 module.exports = function (route) {
 	route
 		.when('/',{
@@ -42586,7 +42596,7 @@ module.exports = function (route) {
 module.exports.$inject = [
 	'$routeProvider'
 ];
-},{}],"/home/pol/Work/theme-tumblr/src/javascript/services/run.js":[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 var api =  require('./api.json');
 module.exports = function (am) {
 	am.changeLocale(api.lang);
@@ -42595,7 +42605,7 @@ module.exports = function (am) {
 module.exports.$inject = [
 	'amMoment'
 ];
-},{"./api.json":"/home/pol/Work/theme-tumblr/src/javascript/services/api.json"}],"/home/pol/Work/theme-tumblr/src/javascript/services/tumblr.js":[function(require,module,exports){
+},{"./api.json":14}],18:[function(require,module,exports){
 var api =  require('./api.json');
 module.exports = function (resource) {
 	return resource( api.url, {
@@ -42632,4 +42642,4 @@ module.exports = function (resource) {
 module.exports.$inject = [
 	'$resource'
 ];
-},{"./api.json":"/home/pol/Work/theme-tumblr/src/javascript/services/api.json"}]},{},["/home/pol/Work/theme-tumblr/src/javascript/lib.js"]);
+},{"./api.json":14}]},{},[13]);
