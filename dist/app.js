@@ -42784,8 +42784,8 @@ angular.module(require('./api.json').name, [
 .config(require('./config.js'))
 .run(require('./run.js'));
 },{"../controllers/home.js":12,"../controllers/post.js":13,"./api.json":15,"./config.js":17,"./run.js":18,"./tumblr.js":19}],17:[function(require,module,exports){
-module.exports = function (route, locationprovider) {
-	locationprovider.html5mode(true);
+module.exports = function (route, provider) {
+	provider.html5Mode(true);
 	route
 		.when('/',{
 			controller : 'crtHome',
