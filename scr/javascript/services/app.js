@@ -1,4 +1,4 @@
-angular.module('theme', [
+angular.module(require('./api.json').name, [
 	'ng',
 	'ngRoutes',
 	'ngAnimate',
@@ -6,7 +6,8 @@ angular.module('theme', [
 	'ngSanitize',
 	'ngAnimate',
 	'confg',
-	'angularMoment'
+	'angularMoment',
+	'akoenig.deckgrid'
 ])
 .constant('API', require('./api.json'))
 .service('tumblr', require('./tumblr.js'))

@@ -1,28 +1,56 @@
-article( ng-switch="post.type" )
-	section( ng-switch-when="photo" )
-		ul
-			li( ng-repeat="photo in post.photos.alt_sizes", class="item-{{$index}}" ): a( ng-href="{{photo.url}}" )
-				img(ng-src="{{photo.url}}", width="{{photo.width}}", height="{{photo.height}}" )
-			p( ng-if="post.caption.length", ng-bind-html="post.caption")
-	section( ng-switch-when="chat" )
-	section( ng-switch-when="video" )
-	section( ng-switch-when="quote" )
-	section( ng-switch-when="answer" )
-	section( ng-switch-when="audio" )
-	section( ng-switch-when="link" )
-	section( ng-switch-default )
-		//- Texto comun
-		h1 {{post.title}}
-		article( ng-bind-html="post.body" )
+article( ng-switch="card.type" )
+	ul( ng-switch-when="photo" )
+		li( ng-repeat="photo in card.photos.alt_sizes", class="item-{{$index}}" ): a( ng-href="{{photo.url}}" )
+			img(ng-src="{{photo.url}}", width="{{photo.width}}", height="{{photo.height}}" )
+		p( ng-if="card.caption.length", ng-bind-html="card.caption")
 
-	p( am-time-ago="post.timestamp" )
-	ul( ng-if="post.tags.length" )
-		li( ng-repeat="tag in post.tags" )
+	blockqoute( ng-switch-when="quote", cite="{{card.source_url}}" )
+		p {{card.text}}
+		cite: a(ng-href="{{card.source_url}}", target="_blank") {{card.source_title}}
+
+	section( ng-switch-when="link", cite="{{card.source_url}}" )
+		a(href="{{card.url}}", target="_blank"): h1 {{card.title}}
+		.block( ng-bind-html="card.description" )
+
+	dl( ng-switch-when="chat" )
+		dt( ng-repeat-start="d in card.dialogue" ) {{d.name}}
+		dd( ng-repeat-end ) {{d.phrase}}
+		p.line {{card.body}}
+
+	figure( ng-switch-when="audio" )
+		//- Revisar si esto funciona
+		h2 {{card.id3_title}}
+		.player-audio( ng-bind-html="card.player" )
+		figcaption
+			.caption( ng-bind-html="card.caption" )
+			p: a(ng-href="{{card.source_url}}", target="_blank") {{card.source_title}}
+
+	figure( ng-switch-when="video" )
+		//- Parametrizarlo con @mediaquery
+		video( ng-bind-html="card.player[0].embed_code" )
+		video( ng-bind-html="card.player[1].embed_code" )
+		video( ng-bind-html="card.player[2].embed_code" )
+		figcaption
+			.caption( ng-bind-html="card.caption" )
+			p: a(ng-href="{{card.source_url}}", target="_blank") {{card.source_title}}
+
+	dl( ng-switch-when="answer" )
+		dt {{card.question}}
+		dd( ng-bind-html="card.answer" )
+		p: a(ng-href="{{card.asking_url}}", target="_blank") {{card.asking_name}}
+
+	section( ng-switch-default )
+		h1 {{card.title}}
+		article( ng-bind-html="card.body" )
+
+	p( am-time-ago="card.timestamp" )
+	ul( ng-if="card.tags.length" )
+		li( ng-repeat="tag in card.tags" )
 			a(href="http://", target="_blank") {{tag}}
 	ul
-		li: a(ng-href="http://api.twitter.com/intent/tweet?url={{post.url}}&tweet=" )
+		li: a(ng-href="http://api.twitter.com/intent/tweet?url={{card.url}}&tweet=" )
 			i.fa.fa-twitter 
-		li: a(ng-href="http://facebook.com/share?url={{post.url}}" )
+		li: a(ng-href="http://facebook.com/share?url={{card.url}}" )
 			i.fa.fa-facebook
-		li: a(ng-href="https://www.tumblr.com/reblog/{{post.id}}/{{post.reblog_key}}" )
+		li: a(ng-href="https://www.tumblr.com/reblog/{{card.id}}/{{card.reblog_key}}" )
 			i.fa.fa-reblog

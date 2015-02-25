@@ -3,7 +3,7 @@ module.exports = function (scope, params, tumblr, location) {
 	if(tmlbr.meta.status >= 202)
 		return location.path('/error');
 
-	scope.post = scope.tmlbr.response.post[0];
+	scope.card = scope.tmlbr.response.post[0];
 
 	scope.next = function () {
 	};

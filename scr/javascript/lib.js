@@ -7,4 +7,5 @@ require('angular-sanitize');
 require('angular-resource');
 require('angular-touch');
 require('angular-moment');
+require('angular-deckgrid');
 require('./services/app.js');
