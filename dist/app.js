@@ -42686,8 +42686,8 @@ module.exports = function (scope, tumblr) {
 		scope.render.page++;
 		tumblr.posts(scope.render).$promise.then(function (resp) {
 			if(angular.isObject(resp.response) && angular.isArray(resp.response.posts) ){
-				for (var i = resp.response.posts.length - 1; i >= 0; i--) 
-					scope.posts.push(resp.response.posts[i]);	
+				for (var i = resp.response.posts.length - 1; i >= 0; i--)
+					scope.posts.push(resp.response.posts[i]);
 			}
 		},  function( error ) {
 			console.log(error);
@@ -42706,20 +42706,33 @@ module.exports.$inject = [
 module.exports = function (scope, params, tumblr, location) {
 
 	scope.next = function () {
+		tumblr.posts({
+			note_count : scope.card.note_count++
+		}).$promise.then(thePost, theError);
 	};
 
 	scope.prev = function () {
+		if(scope.card.note_count){
+			tumblr.posts({
+				note_count : scope.card.note_count--
+			}).$promise.then(thePost, theError);
+		}
 	};
 
 	scope.start = function () {
-		tumblr.posts(params).$promise.then(function (post) {
-			console.log(post);
-			scope.card = post;
-		},  function( error ) {
-			console.log(error);
-			location.path('/error');
-		});
+		tumblr.posts({
+			id : params.id
+		}).$promise.then(thePost, theError);
 	};
+
+	function thePost (resp) {
+		scope.card = resp.response.post[0];
+	}
+
+	function theError (argument) {
+		console.log(error);
+		location.path('/error');
+	}
 
 	scope.start();
 };
@@ -42771,23 +42784,25 @@ angular.module(require('./api.json').name, [
 .config(require('./config.js'))
 .run(require('./run.js'));
 },{"../controllers/home.js":12,"../controllers/post.js":13,"./api.json":15,"./config.js":17,"./run.js":18,"./tumblr.js":19}],17:[function(require,module,exports){
-module.exports = function (route) {
+module.exports = function (route, locationprovider) {
+	locationprovider.html5mode(true);
 	route
 		.when('/',{
 			controller : 'crtHome',
-			templateUrl : "home"
+			templateUrl : 'home'
 		})
-		.when('/post/:id',{
+		.when('/post/:id/:name',{
 			controller : 'crtPost',
-			templateUrl : "post"
+			templateUrl : 'post'
 		})
 		.otherwise({
-			templateUrl : "error"
+			templateUrl : 'error'
 		});
 };
 
 module.exports.$inject = [
-	'$routeProvider'
+	'$routeProvider',
+	'$locationprovider'
 ];
 },{}],18:[function(require,module,exports){
 var api =  require('./api.json');
