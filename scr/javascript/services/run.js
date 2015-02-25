@@ -1,8 +1,8 @@
-modue.exports = function (am, api) {
+module.exports = function (am, api) {
 	am.changeLocale(api.lang);
 };
 
-modue.exports.$inject = [
+module.exports.$inject = [
 	'amMoment',
 	'API'
 ];
