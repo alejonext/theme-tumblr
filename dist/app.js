@@ -42489,15 +42489,18 @@ var minlengthDirective = function() {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],11:[function(require,module,exports){
 module.exports = function (scope, tumblr) {
-	scope.pages =  {
+	scope.render =  {
 		page : 0
 	};
+	scope.posts = [];
 	
 	scope.reload = function () {
-		scope.pages++;
-		tumblr.posts(scope.pages).$promise.then(function (post) {
-			console.log(post);
-			scope.post = post;
+		scope.render.page++;
+		tumblr.posts(scope.render).$promise.then(function (resp) {
+			if(angular.isObject(resp.response) && angular.isArray(resp.response.posts) ){
+				for (var i = resp.response.posts.length - 1; i >= 0; i--) 
+					scope.posts.push(resp.response.posts[i]);	
+			}
 		},  function( error ) {
 			console.log(error);
 		});
