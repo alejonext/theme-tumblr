@@ -1,6 +1,6 @@
 angular.module(require('./api.json').name, [
 	'ng',
-	'ngRoutes',
+	'ngRoute',
 	'ngAnimate',
 	'ngTouch',
 	'ngSanitize',

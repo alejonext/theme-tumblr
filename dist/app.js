@@ -42550,7 +42550,7 @@ require('./services/app.js');
 },{"./services/app.js":15,"angular":8,"angular-animate":1,"angular-deckgrid":2,"angular-moment":3,"angular-resource":4,"angular-route":5,"angular-sanitize":6,"angular-touch":7,"moment":10,"moment/min/locales.js":9}],14:[function(require,module,exports){
 module.exports={
 	"name" : "theme",
-	"key" : "-- TU API KEY --",
+	"key" : "fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4",
 	"url" : "http://api.tumblr.com/v2/blog/:name.tumblr.com/:type/:is?api_key=:key",
 	"tpl" : {
 		"post" : "simple",
@@ -42562,7 +42562,7 @@ module.exports={
 },{}],15:[function(require,module,exports){
 angular.module(require('./api.json').name, [
 	'ng',
-	'ngRoutes',
+	'ngRoute',
 	'ngAnimate',
 	'ngTouch',
 	'ngSanitize',
