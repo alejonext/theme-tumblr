@@ -42551,7 +42551,7 @@ require('./services/app.js');
 module.exports={
 	"name" : "theme",
 	"key" : "-- TU API KEY --",
-	"url" : "http://api.tumblr.com/v2/blog/:url/:type/:is?api_key=:key",
+	"url" : "http://api.tumblr.com/v2/blog/:name.tumblr.com/:type/:is?api_key=:key",
 	"tpl" : {
 		"post" : "simple",
 		"error" : "error",
@@ -42567,17 +42567,17 @@ angular.module(require('./api.json').name, [
 	'ngTouch',
 	'ngSanitize',
 	'ngAnimate',
-	'confg',
 	'angularMoment',
 	'akoenig.deckgrid'
 ])
 .constant('API', require('./api.json'))
+.service('domoin', require('./domain.js'))
 .service('tumblr', require('./tumblr.js'))
 .controller('home', require('../controllers/home.js'))
 .controller('post', require('../controllers/post.js'))
 .config(require('./config.js'))
 .run(require('./run.js'));
-},{"../controllers/home.js":11,"../controllers/post.js":12,"./api.json":14,"./config.js":16,"./run.js":17,"./tumblr.js":18}],16:[function(require,module,exports){
+},{"../controllers/home.js":11,"../controllers/post.js":12,"./api.json":14,"./config.js":16,"./domain.js":17,"./run.js":18,"./tumblr.js":19}],16:[function(require,module,exports){
 module.exports = function (route, api) {
 	route
 		.when('/',{
@@ -42599,6 +42599,19 @@ module.exports.$inject = [
 	'API'
 ];
 },{}],17:[function(require,module,exports){
+module.exports = function (win) {
+	var body = angular.element( angular.element(win).find('body') );
+	return {
+		get :function () {
+			return body.attr('data-urlencoded-name');
+		}
+	};
+};
+
+module.exports.$inject = [
+	'$window'
+];
+},{}],18:[function(require,module,exports){
 module.exports = function (am, api) {
 	am.changeLocale(api.lang);
 };
@@ -42607,11 +42620,11 @@ module.exports.$inject = [
 	'amMoment',
 	'API'
 ];
-},{}],18:[function(require,module,exports){
-module.exports = function (resource, api, url) {
+},{}],19:[function(require,module,exports){
+module.exports = function (resource, api, blog) {
 	return resource( api.url, {
 		key : api.key,
-		url : url,
+		name : blog.get(),
 		type : 'info',
 		is : ''
 	}, {
@@ -42642,6 +42655,6 @@ module.exports = function (resource, api, url) {
 module.exports.$inject = [
 	'$resource',
 	'API',
-	'URL'
+	'domain'
 ];
 },{}]},{},[13]);

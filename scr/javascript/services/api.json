@@ -1,7 +1,7 @@
 {
 	"name" : "theme",
 	"key" : "-- TU API KEY --",
-	"url" : "http://api.tumblr.com/v2/blog/:url/:type/:is?api_key=:key",
+	"url" : "http://api.tumblr.com/v2/blog/:name.tumblr.com/:type/:is?api_key=:key",
 	"tpl" : {
 		"post" : "simple",
 		"error" : "error",

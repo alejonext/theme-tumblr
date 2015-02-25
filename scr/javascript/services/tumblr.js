@@ -1,7 +1,7 @@
-module.exports = function (resource, api, url) {
+module.exports = function (resource, api, blog) {
 	return resource( api.url, {
 		key : api.key,
-		url : url,
+		name : blog.get(),
 		type : 'info',
 		is : ''
 	}, {
@@ -32,5 +32,5 @@ module.exports = function (resource, api, url) {
 module.exports.$inject = [
 	'$resource',
 	'API',
-	'URL'
+	'domain'
 ];
