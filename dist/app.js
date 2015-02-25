@@ -42686,7 +42686,7 @@ module.exports = function (scope, tumblr) {
 		scope.render.page++;
 		tumblr.posts(scope.render).$promise.then(function (resp) {
 			if(angular.isObject(resp.response) && angular.isArray(resp.response.posts) && resp.response.total_posts > scope.posts.length){
-				for (var i = resp.response.posts.length - 1; i >= 0; i--)
+				for (var i = 0; i < resp.response.posts.length; i++)
 					scope.posts.push(resp.response.posts[i]);
 			}
 		},  function( error ) {
@@ -42696,7 +42696,6 @@ module.exports = function (scope, tumblr) {
 
 	scope.reload();
 };
-
 
 module.exports.$inject = [
 	'$scope',
