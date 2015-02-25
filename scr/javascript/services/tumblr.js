@@ -1,7 +1,8 @@
-module.exports = function (resource, api, blog) {
+var api =  require('./api.json');
+module.exports = function (resource) {
 	return resource( api.url, {
 		key : api.key,
-		name : blog.get(),
+		name : api.blog,
 		type : 'info',
 		is : ''
 	}, {
@@ -30,7 +31,5 @@ module.exports = function (resource, api, blog) {
 };
 
 module.exports.$inject = [
-	'$resource',
-	'API',
-	'domain'
+	'$resource'
 ];

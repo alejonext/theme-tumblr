@@ -1,20 +1,18 @@
-module.exports = function (route, api) {
+module.exports = function (route) {
 	route
 		.when('/',{
-			contrller : 'home',
-			template : api.tpl.home
+			controller : 'crtHome',
+			templateUrl : "home"
 		})
 		.when('/post/:id',{
-			contrller : 'post',
-			template : api.tpl.post
+			controller : 'crtPost',
+			templateUrl : "post"
 		})
 		.otherwise({
-			template : api.tpl.error	
+			templateUrl : "error"
 		});
 };
 
-
 module.exports.$inject = [
-	'$routeProvider',
-	'API'
+	'$routeProvider'
 ];

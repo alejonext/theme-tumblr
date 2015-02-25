@@ -1,11 +1,7 @@
 {
 	"name" : "theme",
-	"key" : "-- TU API KEY --",
+	"key" : "--TU KEY--",
 	"url" : "http://api.tumblr.com/v2/blog/:name.tumblr.com/:type/:is?api_key=:key",
-	"tpl" : {
-		"post" : "simple",
-		"error" : "error",
-		"home" : "home"
-	},
-	"lang" : "es"
+	"lang" : "es",
+	"blog" : "alejonext"
 }

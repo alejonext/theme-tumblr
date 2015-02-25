@@ -1,4 +1,5 @@
 module.exports = function (scope, params, tumblr, location) {
+	console.log(scope);
 	var tmlbr = tumblr.posts(params.id);
 	if(tmlbr.meta.status >= 202)
 		return location.path('/error');
@@ -16,6 +17,6 @@ module.exports = function (scope, params, tumblr, location) {
 module.exports.$inject = [
 	'$scope',
 	'$routeParams',
-	'tumblr',
+	'myTumblr',
 	'$location'
 ];

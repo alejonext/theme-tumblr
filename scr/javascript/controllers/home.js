@@ -2,13 +2,7 @@ module.exports = function (scope, tumblr, location) {
 	scope.pages =  {
 		page : 1
 	};
-	var tmlbr = tumblr.posts(scope.pages);
-
-	if(tmlbr.meta.status >= 202)
-		return location.path('/error');
-
-	scope.resp = tmlbr.response;
-
+	scope.resp = tumblr.posts(scope.pages);
 	scope.reload = function () {
 		scope.pages++;
 		var tmlbr =  tumblr.posts(scope.pages);
@@ -20,6 +14,6 @@ module.exports = function (scope, tumblr, location) {
 
 module.exports.$inject = [
 	'$scope',
-	'tumblr',
+	'myTumblr',
 	'$location'
 ];
