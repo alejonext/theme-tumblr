@@ -42802,7 +42802,7 @@ module.exports = function (route, locationprovider) {
 
 module.exports.$inject = [
 	'$routeProvider',
-	'$locationprovider'
+	'$locationProvider'
 ];
 },{}],18:[function(require,module,exports){
 var api =  require('./api.json');
