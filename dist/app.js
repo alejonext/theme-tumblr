@@ -42487,7 +42487,7 @@ var minlengthDirective = function() {
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/pol/Work/theme-tumblr/scr/javascript/controllers/home.js":[function(require,module,exports){
+},{}],"/home/pol/Work/theme-tumblr/src/javascript/controllers/home.js":[function(require,module,exports){
 module.exports = function (scope, tumblr, location) {
 	scope.pages =  {
 		page : 1
@@ -42507,7 +42507,7 @@ module.exports.$inject = [
 	'myTumblr',
 	'$location'
 ];
-},{}],"/home/pol/Work/theme-tumblr/scr/javascript/controllers/post.js":[function(require,module,exports){
+},{}],"/home/pol/Work/theme-tumblr/src/javascript/controllers/post.js":[function(require,module,exports){
 module.exports = function (scope, params, tumblr, location) {
 	console.log(scope);
 	var tmlbr = tumblr.posts(params.id);
@@ -42530,7 +42530,7 @@ module.exports.$inject = [
 	'myTumblr',
 	'$location'
 ];
-},{}],"/home/pol/Work/theme-tumblr/scr/javascript/lib.js":[function(require,module,exports){
+},{}],"/home/pol/Work/theme-tumblr/src/javascript/lib.js":[function(require,module,exports){
 require('angular');
 window.moment = require('moment');
 require('moment/min/locales.js');
@@ -42542,15 +42542,15 @@ require('angular-touch');
 require('angular-moment');
 require('angular-deckgrid');
 require('./services/app.js');
-},{"./services/app.js":"/home/pol/Work/theme-tumblr/scr/javascript/services/app.js","angular":"/home/pol/Work/node_modules/angular/angular.js","angular-animate":"/home/pol/Work/node_modules/angular-animate/angular-animate.js","angular-deckgrid":"/home/pol/Work/node_modules/angular-deckgrid/angular-deckgrid.js","angular-moment":"/home/pol/Work/node_modules/angular-moment/angular-moment.js","angular-resource":"/home/pol/Work/node_modules/angular-resource/angular-resource.js","angular-route":"/home/pol/Work/node_modules/angular-route/angular-route.js","angular-sanitize":"/home/pol/Work/node_modules/angular-sanitize/angular-sanitize.js","angular-touch":"/home/pol/Work/node_modules/angular-touch/angular-touch.js","moment":"/home/pol/Work/node_modules/moment/moment.js","moment/min/locales.js":"/home/pol/Work/node_modules/moment/min/locales.js"}],"/home/pol/Work/theme-tumblr/scr/javascript/services/api.json":[function(require,module,exports){
-module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
+},{"./services/app.js":"/home/pol/Work/theme-tumblr/src/javascript/services/app.js","angular":"/home/pol/Work/node_modules/angular/angular.js","angular-animate":"/home/pol/Work/node_modules/angular-animate/angular-animate.js","angular-deckgrid":"/home/pol/Work/node_modules/angular-deckgrid/angular-deckgrid.js","angular-moment":"/home/pol/Work/node_modules/angular-moment/angular-moment.js","angular-resource":"/home/pol/Work/node_modules/angular-resource/angular-resource.js","angular-route":"/home/pol/Work/node_modules/angular-route/angular-route.js","angular-sanitize":"/home/pol/Work/node_modules/angular-sanitize/angular-sanitize.js","angular-touch":"/home/pol/Work/node_modules/angular-touch/angular-touch.js","moment":"/home/pol/Work/node_modules/moment/moment.js","moment/min/locales.js":"/home/pol/Work/node_modules/moment/min/locales.js"}],"/home/pol/Work/theme-tumblr/src/javascript/services/api.json":[function(require,module,exports){
+module.exports=module.exports={
 	"name" : "theme",
 	"key" : "fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4",
 	"url" : "http://api.tumblr.com/v2/blog/:name.tumblr.com/:type/:is?api_key=:key",
 	"lang" : "es",
 	"blog" : "alejonext"
 }
-},{}],"/home/pol/Work/theme-tumblr/scr/javascript/services/app.js":[function(require,module,exports){
+},{}],"/home/pol/Work/theme-tumblr/src/javascript/services/app.js":[function(require,module,exports){
 angular.module(require('./api.json').name, [
 	'ng',
 	'ngRoute',
@@ -42567,7 +42567,7 @@ angular.module(require('./api.json').name, [
 .controller('crtPost', require('../controllers/post.js'))
 .config(require('./config.js'))
 .run(require('./run.js'));
-},{"../controllers/home.js":"/home/pol/Work/theme-tumblr/scr/javascript/controllers/home.js","../controllers/post.js":"/home/pol/Work/theme-tumblr/scr/javascript/controllers/post.js","./api.json":"/home/pol/Work/theme-tumblr/scr/javascript/services/api.json","./config.js":"/home/pol/Work/theme-tumblr/scr/javascript/services/config.js","./run.js":"/home/pol/Work/theme-tumblr/scr/javascript/services/run.js","./tumblr.js":"/home/pol/Work/theme-tumblr/scr/javascript/services/tumblr.js"}],"/home/pol/Work/theme-tumblr/scr/javascript/services/config.js":[function(require,module,exports){
+},{"../controllers/home.js":"/home/pol/Work/theme-tumblr/src/javascript/controllers/home.js","../controllers/post.js":"/home/pol/Work/theme-tumblr/src/javascript/controllers/post.js","./api.json":"/home/pol/Work/theme-tumblr/src/javascript/services/api.json","./config.js":"/home/pol/Work/theme-tumblr/src/javascript/services/config.js","./run.js":"/home/pol/Work/theme-tumblr/src/javascript/services/run.js","./tumblr.js":"/home/pol/Work/theme-tumblr/src/javascript/services/tumblr.js"}],"/home/pol/Work/theme-tumblr/src/javascript/services/config.js":[function(require,module,exports){
 module.exports = function (route) {
 	route
 		.when('/',{
@@ -42586,7 +42586,7 @@ module.exports = function (route) {
 module.exports.$inject = [
 	'$routeProvider'
 ];
-},{}],"/home/pol/Work/theme-tumblr/scr/javascript/services/run.js":[function(require,module,exports){
+},{}],"/home/pol/Work/theme-tumblr/src/javascript/services/run.js":[function(require,module,exports){
 var api =  require('./api.json');
 module.exports = function (am) {
 	am.changeLocale(api.lang);
@@ -42595,32 +42595,33 @@ module.exports = function (am) {
 module.exports.$inject = [
 	'amMoment'
 ];
-},{"./api.json":"/home/pol/Work/theme-tumblr/scr/javascript/services/api.json"}],"/home/pol/Work/theme-tumblr/scr/javascript/services/tumblr.js":[function(require,module,exports){
+},{"./api.json":"/home/pol/Work/theme-tumblr/src/javascript/services/api.json"}],"/home/pol/Work/theme-tumblr/src/javascript/services/tumblr.js":[function(require,module,exports){
 var api =  require('./api.json');
 module.exports = function (resource) {
 	return resource( api.url, {
+		callback: 'JSON_CALLBACK',
 		key : api.key,
 		name : api.blog,
 		type : 'info',
 		is : ''
 	}, {
 		info : {
-			method : 'GET'
+			method : 'JSONP',
 		},
 		likes : {
-			method : 'GET',
+			method : 'JSONP',
 			params : {
 				type : 'likes'
 			}
 		},
 		followers :{
-			method : 'GET',
+			method : 'JSONP',
 			params : {
 				type : 'followers'
 			}	
 		},
 		posts : { // Todos los posts, sin distincion
-			method : 'GET',
+			method : 'JSONP',
 			params : {
 				type : 'posts',
 			}
@@ -42631,4 +42632,4 @@ module.exports = function (resource) {
 module.exports.$inject = [
 	'$resource'
 ];
-},{"./api.json":"/home/pol/Work/theme-tumblr/scr/javascript/services/api.json"}]},{},["/home/pol/Work/theme-tumblr/scr/javascript/lib.js"]);
+},{"./api.json":"/home/pol/Work/theme-tumblr/src/javascript/services/api.json"}]},{},["/home/pol/Work/theme-tumblr/src/javascript/lib.js"]);

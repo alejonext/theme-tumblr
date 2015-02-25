@@ -1,28 +1,29 @@
 var api =  require('./api.json');
 module.exports = function (resource) {
 	return resource( api.url, {
+		callback: 'JSON_CALLBACK',
 		key : api.key,
 		name : api.blog,
 		type : 'info',
 		is : ''
 	}, {
 		info : {
-			method : 'GET'
+			method : 'JSONP',
 		},
 		likes : {
-			method : 'GET',
+			method : 'JSONP',
 			params : {
 				type : 'likes'
 			}
 		},
 		followers :{
-			method : 'GET',
+			method : 'JSONP',
 			params : {
 				type : 'followers'
 			}	
 		},
 		posts : { // Todos los posts, sin distincion
-			method : 'GET',
+			method : 'JSONP',
 			params : {
 				type : 'posts',
 			}
